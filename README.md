@@ -10,6 +10,11 @@ Telegram bot that listens to a group or to direct messages and when it detects a
 	1. Send a valid AoE 2 taunt number as a regular message.
 	2. Type a valid AoE 2 taunt number as a command. **Ex: /8**
 	3. Use the bot inline to search for taunts to send. **Ex: @aoe2_taunts_bot 8**
+	3. Use the bot inline to search for a taunt's text. 
+	    - **Ex1: @aoe2_taunts_bot Build**
+	    - **Ex2: @aoe2_taunts_bot Build a w**
+	    - **Ex3: @aoe2_taunts_bot Build a won**
+
 
 ## List of valid taunt numbers
 

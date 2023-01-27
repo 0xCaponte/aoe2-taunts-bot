@@ -3,7 +3,7 @@ import os
 from telegram import Update, InlineQueryResultAudio
 from telegram.ext import filters, MessageHandler, ApplicationBuilder, ContextTypes, InlineQueryHandler
 
-from taunts import get_validated_taunt_tuple
+from taunts import get_validated_taunt_tuple, search_for_taunt_tuple
 
 
 async def taunt(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -29,12 +29,15 @@ async def inline_taunts(update: Update, context: ContextTypes.DEFAULT_TYPE):
        given a taunt number, searches for the corresponding taunt text and audio url
        """
 
-    query = update.inline_query.query
+    query : str = update.inline_query.query
 
     if not query:
         return
 
-    taunt_tuple = get_validated_taunt_tuple(query)
+    if query.isdigit():
+        taunt_tuple = get_validated_taunt_tuple(query)
+    else:
+        taunt_tuple = search_for_taunt_tuple(query)
 
     if taunt_tuple:
         results = [

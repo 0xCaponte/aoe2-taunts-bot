@@ -1,4 +1,7 @@
+import difflib
 import os
+import re
+import string
 
 taunt_file_path = "./taunts/mp3/{}.mp3"
 
@@ -142,6 +145,30 @@ taunts_map = {
 }
 
 
+def search_for_taunt_tuple(message: str):
+    """
+       checks the string of any given message and tries to match it with the shortest text of a taunt from the dictionary.
+       It will return a tuple with the taunt information.
+
+       :return: a tuple where 0 = taunt number, 1 = text, 2 = audio local path, 3 = audio url
+       """
+    query = clean_string(message).replace(" ", ".*") + ".*"
+    pattern = re.compile(query)
+
+    best_match = None
+    best_key = None
+
+    for key, (taunt, url) in taunts_map.items():
+
+        match = pattern.search(clean_string(taunt))
+
+        if match and (not best_match or len(match.string) < len(best_match)):
+            best_match = match.string
+            best_key = key
+
+    return get_validated_taunt_tuple(str(best_key))
+
+
 def get_validated_taunt_tuple(message: str):
     """
        checks the string of any given message and if it is a number that matches a taunt from the dictionary
@@ -166,3 +193,14 @@ def get_validated_taunt_tuple(message: str):
             print("No Taunt found for {}".format(message))
 
     return None
+
+
+###########
+# Helpers #
+###########
+
+def clean_string(text: str):
+    """
+       makes a string lowercase and removes all punctuation from it
+       """
+    return text.lower().translate(str.maketrans("", "", string.punctuation))
