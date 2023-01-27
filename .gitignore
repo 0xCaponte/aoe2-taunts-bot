@@ -1,3 +1,35 @@
+
+Skip to content
+Pull requests
+Issues
+Codespaces
+Marketplace
+Explore
+@ur3k
+ur3k /
+aoe2-taunts-bot
+Private
+
+Fork your own copy of ur3k/aoe2-taunts-bot
+
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+
+    Settings
+
+aoe2-taunts-bot/.gitignore
+@ur3k
+ur3k Initial commit
+Latest commit 368f56d Jan 27, 2023
+History
+1 contributor
+129 lines (105 sloc) 1.76 KB
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -127,3 +159,23 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+Footer
+© 2023 GitHub, Inc.
+Footer navigation
+
+    Terms
+    Privacy
+    Security
+    Status
+    Docs
+    Contact GitHub
+    Pricing
+    API
+    Training
+    Blog
+    About
+
+aoe2-taunts-bot/.gitignore at main · ur3k/aoe2-taunts-bot
+
+.idea
+.idea/*
