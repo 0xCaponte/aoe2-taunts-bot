@@ -30,6 +30,11 @@ Latest commit 368f56d Jan 27, 2023
 History
 1 contributor
 129 lines (105 sloc) 1.76 KB
+
+# SSL
+ssl
+ssl/*
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
